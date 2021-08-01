@@ -1,12 +1,375 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Boda</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<style>
+.video1{
+  position: fixed;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100vh;
+  object-fit: cover;
+} 
+body{
+  background-color: black;
+}
+/*******secion cara opaca************/
+.tapa{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  transition: all 1.5s ease-in-out;
+}
+.botonInicio{
+  width: 100%;
+  margin-top: 25%;
+  background-color: rgba(255, 124, 124, 0.432);
+  position: relative;
+  opacity: 1;
+  transition: all 1.5s ease-in-out;
+}
+.particles-button {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  border-radius: 5px;
+	background: #d4d4d481;
+	color: rgb(0, 0, 0);
+  border: none;
+	padding: 1.5rem 3rem;
+	padding: 1.5rem 3rem;
+  font-weight: bolder;
+  font-size: 1.5em;
+  font-family: BRADHITC;
+}
+.entrar{
+  backdrop-filter: blur(0px);
+}
+/*******secion cara opaca*************/
+/*presentacion*/
+.presentacion{
+  position: relative;
+  max-width: 420px;
+  height: 80vh;
+  margin: auto;
+  overflow: hidden;
+}
+.titulo1{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  padding: 10px;
+}
+.titulo1>div{
+  font-family: BRADHITC;
+  font-weight: bolder;
+  font-size: 25px;
+}
+.nombre{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.nombre>div{
+  font-family: GreatVibes-Regular;
+  font-size: 70px;
+}
+.n1{
+  text-align: start;
+  margin-left: 20px;
+} 
+.n2{
+  text-align: end;
+  margin-right: 20px;
+}   
+.fecha{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 430px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.fecha>div{
+  font-family: BRADHITC;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.cubre{
+  position: relative;
+  max-width: 420px;
+  margin: auto;
+  height: 20vh;
+  padding-top: 20px;
+  margin-top: -10px;
+}
+.enlases{
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.enlases2{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+a{
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  margin: 5px;
+  font-family: BRADHITC;
+  font-weight: bolder;
+  font-size: 1.3em;
+  padding: 10px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+/*presentacion*/
+/********boton musica*********/
+.btnMUSICA {
+  position: absolute;
+  bottom:  20px;
+  left: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  user-select: none;
+}
+.icons {
+  display: none;
+}
+#btnMUSIC {
+  border: 0;
+}
+#btnMUSIC:focus {
+  border: none;
+  outline: 0 !important;
+  outline-style: none;
+}
+.btnMUSICA .btn {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #f2f2f2;
+  transition: all 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0px -6px 10px white, 0px 4px 15px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+.btnMUSICA .btn:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: 2;
+}
+.btnMUSICA .btn:active {
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.02);
+}
+.btnMUSICA .btn:active:after {
+  box-shadow: inset 0px -2px 5px white, inset 0px 2px 5px rgba(0, 0, 0, 0.15);
+}
+.btnMUSICA .btn.active.play-pause .icon.pause {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+.btnMUSICA .btn.active.play-pause .icon.play {
+  opacity: 0;
+  transform: translate(-50%, 50%);
+}
+.btnMUSICA .btn .icon-container,
+.btnMUSICA .btn .icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  fill: #868686;
+  height: 1rem;
+  vertical-align: middle;
+  width: 1rem;
+  transition: all 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.btnMUSICA .btn.play-pause .icon.pause {
+  opacity: 0;
+  transform: translate(-50%, 50%);
+}
+/*animacion*/
+:root {
+  --gray: #e0e5ec;
+  --size: 40px;
+  --scalingFactor: calc(100 / 25); /*related to size*/
+}
+.dot{
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  z-index: -1;
+  transform: translate(-50%,-50%);
+  height: var(--size);
+  width: var(--size);
+  background: var(--gray);
+  box-shadow: 5px 5px 10px rgba(163, 177, 198, 0.6), -5px -5px 10px rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+.dotAminacion{
+  animation-name: wave;
+  animation-timing-function: ease-in-out;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+.dot {
+  opacity: 1;
+  transform: translate3d(-50%,-50%,0) scale3d(0,0,1);
+}
+.dot:nth-of-type(2) {
+  z-index: 1;
+  animation-delay: .5s;
+  z-index: -1;
+  
+}
+.dot:nth-of-type(3) {
+  z-index: 2;
+  animation-delay: 1s;
+  z-index: -1;
+}
+@keyframes wave{
+  0% {
+    opacity: 1;
+    transform: translate3d(-50%,-50%,0) scale3d(1,1,1);
+  }  
+  100% {
+    opacity: 0;
+    transform: translate3d(-50%,-50%,0) scale3d(var(--scalingFactor),var(--scalingFactor),1);
+  }
+}
+/*animacion*/
+/********boton musica*********/
+
+</style>
 </head>
 <body>
-    <h1>hola mundo</h1>
-    <div>nuevo guit.....</div>
+<video class="video1" muted preload autoplay loop  width="640" height="360">
+  <source src="video/boda2.mp4" type="video/mp4">
+</video>
+
+<!--secion cara opaca-->
+<div id="tapa" class="tapa">
+  <div id="bntVer" class="botonInicio">
+    <button class="particles-button" onclick="entrar();">VER</button>
+  </div>
+</div>
+<!--secion cara opaca-->
+<!--presentacion-->
+<div class="presentacion">
+  <div class="titulo1">
+    <div>Tenemos el grato placer de invitarte</div>
+    <div>A nuestra Boda</div>
+  </div> 
+  <div class="nombre">
+    <div class="n1">Carlos</div>
+    <div class="ny">&</div>
+    <div class="n2">Mariela</div>
+  </div>      
+  <div class="fecha">
+    <div>Sabado 5 de Junio 2021</div>
+  </div> 
+    
+  <div class="btnMUSICA">
+    <button class="btn play-pause" id="btnMUSIC">
+      <div class="icon-container">
+        <svg class="icon play"><use xlink:href="#pause"></use></svg>
+      </div>
+      <div class="icon-container">
+        <svg class="icon pause"><use xlink:href="#play"></use></svg>
+      </div>
+    </button>
+    <svg class="icons">
+      <symbol id="pause" viewBox="0 0 448 512">
+        <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
+      </symbol>
+      <symbol id="play" viewBox="0 0 448 512">
+        <path  d="M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z" />
+      </symbol>
+    </svg>
+    <div class="dots">
+      <div id="dot1" class="dot "></div>
+      <div id="dot2" class="dot "></div>
+      <div id="dot3" class="dot "></div>
+    </div>
+  </div>
+</div>
+<div class="cubre">
+  <div class="enlases">
+    <a href="salon.html">Ubicacion Local</a>
+    <a href="parroqui.html">Ubicacion Iglesia</a>
+  </div>
+  <div class="enlases2">
+    <a href="detalle.html">Detalles</a>
+  </div>
+</div>
+<!--presentacion-->
+<script>
+/**** animacion entrada y plaing music  ****/ 
+let playing = true;
+var musica = new Audio('/musica/boda1.mp3');
+musica.volume = 0.5;
+function entrar(){
+  document.getElementById("tapa").classList.add("entrar")
+  document.getElementById("bntVer").style.opacity = "0"
+  setTimeout(()=>{
+    document.getElementById("tapa").style.display = "none"
+  },1500)
+  musica.play();
+    document.getElementById('dot1').classList.add('dotAminacion');
+  document.getElementById('dot2').classList.add('dotAminacion');
+  document.getElementById('dot3').classList.add('dotAminacion');
+  btn.classList.toggle("active");
+}
+const btn = document.getElementById("btnMUSIC")
+btn.addEventListener("click", () => {
+    console.log("sss")
+    btn.classList.toggle("active");
+    document.getElementById('dot1').classList.toggle('dotAminacion');
+    document.getElementById('dot2').classList.toggle('dotAminacion');
+    document.getElementById('dot3').classList.toggle('dotAminacion');
+    if(playing==true){
+        musica.pause();
+        playing = false
+    }else{
+        musica.play();
+        playing = true
+    }
+});
+/**** animacion entrada y plaing music  ****/ 
+</script>
 </body>
 </html>

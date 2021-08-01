@@ -1,0 +1,24 @@
+/* variables reset */
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* variables reset */
+body{
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  user-select: none;
+}
+/**** fuentes ****/
+@font-face{
+  font-family: GreatVibes-Regular;
+  src: url(../fonts/GreatVibes-Regular.otf);
+}
+@font-face{
+  font-family: BRADHITC;
+  src: url(../fonts/BRADHITC.TTF);
+}
+/**** fuentes ****/
+

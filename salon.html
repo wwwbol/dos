@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es" >
+<head>
+<meta charset="UTF-8">
+<title>Salon</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+<style>
+/*btn atras*/
+.inicio>a{
+  text-align: center;
+  display: block;
+  width: 100px;
+  background-color: rgba(255, 181, 181, 0.178);
+  margin: auto;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+.iconATR {
+  display: inline-block;
+  background-image: url("data:image/svg+xml;charset=utf8, %3Csvg fill='rgb(0, 0, 0)' viewBox='0 0 448 512' xmlns='http://www.w3.org/2000/svg'%3E    %3Cpath d='M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  
+  margin-top: 5px;
+}
+/*btn atras*/
+
+.datosDireccion{
+  text-align: center;
+  margin-top: 15px;
+  padding: 10px;
+  font-weight: bold;
+}
+.datosDireccion>h5{
+  margin: 0px;
+  font-family: BRADHITC;
+  font-size: 1.3em;
+  font-weight: bold;
+
+}
+.datosDireccion>p{
+  font-family: BRADHITC;
+  margin: 0px;
+  padding: 0px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.mapa{
+  width: 90%;
+  height: 450px;
+  margin: auto;
+  margin-bottom: 20px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(84, 84, 119);
+  box-shadow: 0px 15px 6px -6px black;
+}
+.mapa>iframe{width: 100%;height: 100%;}
+
+.contac{
+  width: 90%;
+  margin: auto;
+  margin-bottom: 15px;
+}
+.datc1{
+  text-align: center;
+  padding: 15px;
+  font-family: BRADHITC;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.img360{
+  width: 100%;
+  margin: auto;
+  height: 350px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(84, 84, 119);
+  box-shadow: 0px 15px 6px -6px black;
+}
+.img360>img{
+  width: 100%;
+  
+}
+
+.enlaceMap{
+  width: 100%;
+  margin-bottom: 10px;
+}
+.enlaceMap>a{
+  background-color: brown;
+  display: block;
+  width: 200px;
+  text-align: center;
+  margin: auto;
+  background-color: rgba(255, 181, 181, 0.178);
+  border-radius: 10px;
+  margin-top: 5px;
+  text-decoration: none;
+  padding: 3px;
+  font-family: BRADHITC;
+  color: #000000;
+  font-weight: bolder;
+}
+</style>
+</head>
+<body>
+
+<div class="inicio">
+  <a href="index.html"><span class="iconATR"></span></a>
+</div>
+    
+
+<div class="datosDireccion">
+  <p>Salon de eventos sociales:</p>
+  <h5>MY DELYSSE</h5>
+  <h5>ubicado en la avenida Santa Vera Cruz, Calle Altiplano N° 1565</h5>
+  <p>Zona Barrio Minero</p>
+  <p>(lineas de minibuses 645 - 458 - 701 - 413 negro)</p>
+  
+</div>
+<div class="enlaceMap">
+  <a href="https://goo.gl/maps/i5LMhC8cYS3QJ7RP9">Ver en googleMap</a>
+</div>
+<div class="mapa">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1608.7279401524893!2d-68.17254598063793!3d-16.464322020234217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDI3JzUxLjMiUyA2OMKwMTAnMTguNCJX!5e0!3m2!1ses!2sbo!4v1622465151947!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+<div class="contac">
+  <h5 class="datc1">Ingresando 2 cuadra de la Avenida </h5>
+  <div class="img360">
+    <img src="/img/local.jpeg" alt="">
+  </div>
+</div>
+
+</body>
+</html>
