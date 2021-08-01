@@ -336,11 +336,12 @@ a{
     <a href="detalle.html">Detalles</a>
   </div>
 </div>
+<audio id="musica" src="/musica/boda1.mp3"></audio>
 <!--presentacion-->
 <script>
 /**** animacion entrada y plaing music  ****/ 
 let playing = true;
-var musica = new Audio('/musica/boda1.mp3');
+var musica = document.getElementById("musica");
 musica.volume = 0.5;
 function entrar(){
   document.getElementById("tapa").classList.add("entrar")
