@@ -21,12 +21,13 @@ messaging.onBackgroundMessage(function(payload) {
     self.registration.showNotification(notificationTitle, notificationOptions);
 });
 */
-const CACHE_NAME = 'static-cache-v10';
+const CACHE_NAME = 'static-cache-v1';
 const FILES_TO_CACHE = [
   '/',
   
   '/font/Splatch.ttf',
   '/video/video1.mp4',
+  '/musica/boda1.mp3',
 
 ];
 
